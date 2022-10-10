@@ -24,3 +24,23 @@ export const StatList = styled.ul`
 export const StatListItem = styled.li`
   flex-grow: 1;
 `;
+
+export const Wrap = styled.div`
+  background-color: red;
+  border: 1px solid rgb(75, 75, 75);
+  padding: 10px;
+`;
+
+export const StatLabel = styled.span`
+  display: block;
+  text-align: center;
+  color: white;
+  margin-bottom: 10px;
+`;
+
+export const StatPercentage = styled.span`
+  font-size: 20px;
+  display: block;
+  text-align: center;
+  color: white;
+`;

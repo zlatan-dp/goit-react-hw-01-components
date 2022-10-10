@@ -1,6 +1,13 @@
 import PropTypes from 'prop-types';
-import { StatsItem } from 'components/stats-item/stats-item';
-import { Section, Title, StatList, StatListItem } from './statistics.styled';
+import {
+  Section,
+  Title,
+  StatList,
+  StatListItem,
+  Wrap,
+  StatLabel,
+  StatPercentage,
+} from './Statistics.styled';
 
 export const Statistics = ({ title, data }) => {
   return (
@@ -10,7 +17,14 @@ export const Statistics = ({ title, data }) => {
       <StatList>
         {data.map(d => (
           <StatListItem key={d.id}>
-            <StatsItem data={d} />
+            <Wrap
+              style={{
+                backgroundColor: getRandomHexColor(),
+              }}
+            >
+              <StatLabel>{d.label}</StatLabel>
+              <StatPercentage>{d.percentage}%</StatPercentage>
+            </Wrap>
           </StatListItem>
         ))}
       </StatList>
@@ -20,5 +34,16 @@ export const Statistics = ({ title, data }) => {
 
 Statistics.propTypes = {
   title: PropTypes.string,
-  data: PropTypes.array,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      percentage: PropTypes.number,
+    })
+  ),
 };
+
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+}

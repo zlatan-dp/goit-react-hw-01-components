@@ -1,7 +1,7 @@
-import css from './friends.module.css';
-import { FriendItem } from 'components/friend-item/frienditem';
+import css from './FriendsList.module.css';
+import { FriendItem } from 'components/Friends/FriendItem/FriendItem';
 
-export const Friends = ({ friends }) => {
+export const FriendsList = ({ friends }) => {
   return (
     <div className={css.wrap}>
       <ul className={css.friendlist}>
