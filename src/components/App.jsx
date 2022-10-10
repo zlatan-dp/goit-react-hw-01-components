@@ -1,5 +1,5 @@
-import { Profile } from './Profile/Profile';
-import { Statistics } from './Statistics/Statistics';
+import { ProfUser } from './ProfUser/ProfUser';
+import { Stats } from './Stats/Stats';
 import { FriendsList } from './Friends/FriendsList/FriendsList';
 import { Transaction } from './Transactions/Transaction';
 import user from '../user.json';
@@ -10,15 +10,15 @@ import transactions from '../transactions.json';
 export const App = () => {
   return (
     <>
-      <Profile
+      <ProfUser
         username={user.username}
         tag={user.tag}
         location={user.location}
         avatar={user.avatar}
         stats={user.stats}
       />
-      <Statistics title="Uploading Stats" data={data} />
-      <Statistics data={data} />
+      <Stats title="Uploading Stats" data={data} />
+      <Stats data={data} />
       <FriendsList friends={friends} />
       <Transaction transactions={transactions} />
     </>

@@ -1,7 +1,7 @@
-import css from './Profile.module.css';
+import css from './ProfUser.module.css';
 import PropTypes from 'prop-types';
 
-export const Profile = ({ username, tag, location, avatar, stats }) => {
+export const ProfUser = ({ username, tag, location, avatar, stats }) => {
   return (
     <div className={css.profile}>
       <div className={css.description}>
@@ -29,7 +29,7 @@ export const Profile = ({ username, tag, location, avatar, stats }) => {
   );
 };
 
-Profile.propTypes = {
+ProfUser.propTypes = {
   profile: PropTypes.shape({
     username: PropTypes.string,
     tag: PropTypes.string,

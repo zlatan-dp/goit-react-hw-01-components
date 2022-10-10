@@ -7,9 +7,9 @@ import {
   Wrap,
   StatLabel,
   StatPercentage,
-} from './Statistics.styled';
+} from './Stats.styled';
 
-export const Statistics = ({ title, data }) => {
+export const Stats = ({ title, data }) => {
   return (
     <Section>
       {title && <Title>{title}</Title>}
@@ -32,7 +32,7 @@ export const Statistics = ({ title, data }) => {
   );
 };
 
-Statistics.propTypes = {
+Stats.propTypes = {
   title: PropTypes.string,
   data: PropTypes.arrayOf(
     PropTypes.shape({
